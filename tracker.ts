@@ -111,7 +111,7 @@ const startPollingJob = async (
 export const createPollJobs = async () => {
     for (const event of EVENTS_TO_TRACK) {
         // Note you can just use this to track it with cursor if you guys store it in database
-        startPollingJob(new SuiClient({ url: 'https://sui-mainnet.blastapi.io/1bdf69cd-76f0-4c6f-a005-ee8eb32c75e1' }), event, null);
+        startPollingJob(new SuiClient({ url: getFullnodeUrl("mainnet") }), event, null);
     }
 };
 
